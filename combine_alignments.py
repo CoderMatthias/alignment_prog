@@ -2,6 +2,7 @@
 
 import sys
 import argparse
+import time
 
 def argument_parser():
     '''Parses the given arguments from the input'''
