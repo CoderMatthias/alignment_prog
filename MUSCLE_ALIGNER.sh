@@ -9,5 +9,5 @@ done
 python combine_alignments.py *pairwise_aligned.fasta
 
 rm species_list.txt
-rm *pairwise_aligned.fasta
+#rm *pairwise_aligned.fasta
 rm *pairwise.fasta

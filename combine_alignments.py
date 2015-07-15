@@ -2,13 +2,12 @@
 
 import sys
 import argparse
-import time
+import copy
 
 def argument_parser():
     '''Parses the given arguments from the input'''
     parser = argparse.ArgumentParser(description='Combine pairwise alignments of mel gene against other species orthologs')
     parser.add_argument('input_', nargs='+', action='store', help='Pairwise alignment')
-    parser.add_argument('-a', action='store', dest='align_file', help='File containing alignments')
     parser.add_argument('-ll', action='store', dest='line_length', type=int, default=60, help='Indicate length of lines in alignment file (default = 60)')
     parser.add_argument('-l', action='store_true', dest='logs', help='write STDOUT and STDERR logs')
     arg = parser.parse_args()
@@ -56,53 +55,55 @@ def make_mel_and_species_dicts(dict_):
    
 def combine_mel_alignments(mel_seq):
     '''Make a mel gene containing all gaps from each pairwise alignment'''
-    insert_dict = {}
-    temp = []
-    dict1 = mel_seq.copy()
     print '\nThese are the insertion indicies for each species'
+    old_counter = 0
     for key, value in mel_seq.iteritems():
-        insert_dict[key] = []
         if 'mel_final' not in locals():
             mel_final = [char for char in value if char != '-']
-### THIS IS FOR ADDING - TO THE SPECIES MEL PORTIONS AND NOTING INSERTIONS LOCATIONS ###
+
         gaps = [i for i, gap in enumerate(mel_final) if gap == '-']
-        for index in gaps:
-            for i, nucl in enumerate(value):
-                if i == index and nucl != '-':
-                    value.insert(i, '-')
-                elif i == index and nucl == '-':
-                    insert_dict[key].append(index)
-        i_mel_final = []
-        count = 0
+        new_value = value[:]
+        counter, added_gaps, temp = 0, 0, 0
         for i, nucl in enumerate(value):
-            if nucl == '-' and i not in gaps:
-                i_mel_final.append(i)
-                for value in insert_dict.values():
-                    for ind, ite in enumerate(value):
-                        if i < ite:
-                            value[ind] = int(ite) + 1
-            elif nucl == '-' and i in gaps:
-                count += 1
-        insert_dict[key] = insert_dict[key] + i_mel_final
-        print key, ', '.join(map(str, insert_dict[key]))
-        for i, index in enumerate(i_mel_final):
-            mel_final.insert(index, '-')
+            if value[i] == '-' and i + added_gaps - counter in gaps:
+                print 'HEYYY', new_value[i+added_gaps-counter - 1]
+                print 'counter', counter
+                print 'added_gaps', added_gaps
+                print 'i', i
+                print i+added_gaps-counter
+            elif value[i] == '-':
+                counter += 1
+            elif i in gaps and value[i + counter - added_gaps] != '-':
+                print i, new_value[i]
+                print counter
+                new_value.insert(i + counter, '-')
+                added_gaps += 1
+        mel_final = new_value
+        print
+        print key
+        print ''.join(mel_final)
+        gaps = [i for i, gap in enumerate(mel_final) if gap == '-']
+        print gaps
+        print
+        raw_input()
+    print
+    print ''.join(mel_final)
+    print
+    raw_input()
+    return mel_final
+
+
+def mk_insertion_dict(mel_seq_original, mel_final):
     gaps = [i for i, gap in enumerate(mel_final) if gap == '-']
-    for key, value in dict1.iteritems():
-        print 'heyo', key
-        tempt = []
+    insert_dict = {}
+    for key, value in mel_seq_original.iteritems():
+        insert_dict[key] = []
         for i, nucl in enumerate(value):
             if i in gaps and nucl != '-':
-                print 'no gap', i
                 value.insert(i, '-')
-            elif i in gaps and nucl == '-':
-                print 'gap', i
-                tempt.append(i)
             elif nucl == '-':
-                print 'gap', i
-                tempt.append(i)
-        print ', '.join(map(str, tempt))
-
+                insert_dict[key].append(i) 
+        print key, ', '.join(map(str, insert_dict[key]))
     print 'Dmel length', len(mel_final)
     return ''.join(mel_final), insert_dict
 
@@ -159,7 +160,8 @@ def main ():
     arg = argument_parser()
     full_dict, gene_name = source_file_dict(arg.input_)
     mel_seq, spec_seq = make_mel_and_species_dicts(full_dict)
-    mel_w_gaps, insert_dict = combine_mel_alignments(mel_seq)
+    mel_w_gaps = combine_mel_alignments(mel_seq)
+    mel_w_gaps, insert_dict = mk_insertion_dict(mel_seq, mel_w_gaps)
     gapped_seq = add_gaps_to_species(spec_seq, mel_w_gaps, insert_dict)
     perf_align = check_per_align(gapped_seq, mel_w_gaps)
     write_output(mel_w_gaps, gapped_seq, arg.line_length, perf_align, gene_name)
