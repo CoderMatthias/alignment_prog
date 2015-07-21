@@ -9,6 +9,7 @@ def argument_parser():
     parser = argparse.ArgumentParser(description='Combine pairwise alignments of mel gene against other species orthologs')
     parser.add_argument('input_', nargs='+', action='store', help='Pairwise alignment')
     parser.add_argument('-ll', action='store', dest='line_length', type=int, default=60, help='Indicate length of lines in alignment file (default = 60)')
+    parser.add_argument('-nuc', action='store', dest='nuc', help='substitute nucleotides in for prot')
     parser.add_argument('-l', action='store_true', dest='logs', help='write STDOUT log')
     arg = parser.parse_args()
     logs(arg.logs)
@@ -27,22 +28,26 @@ def source_file_dict(input_):
     '''
     dict_ = {}
     for file_ in input_:
-        with open(file_, 'r') as source_file:
-            species_name = source_file.name.split('_')[0]
-            gene_name = source_file.name.split('_')[1]
-            for i, line in enumerate(source_file.read().split('\n')):
-                if i == 0:
-                    value = [line]
-                elif line.startswith('>'):
-                    dict_[species_name] = [value]
-                    value = [line]
-                elif line:
-                    if len(value) == 1:
-                        value.append(line)
-                    else:
-                        value[1] += line
-            else:
-                dict_[species_name].append(value)
+        dict_, gene_name = make_dict(file_, dict_)
+    return dict_, gene_name
+
+def make_dict(file_, dict_):
+    with open(file_, 'r') as source_file:
+        species_name = source_file.name.split('_')[0]
+        gene_name = source_file.name.split('_')[1]
+        for i, line in enumerate(source_file.read().split('\n')):
+            if i == 0:
+                value = [line]
+            elif line.startswith('>'):
+                dict_[species_name] = [value]
+                value = [line]
+            elif line:
+                if len(value) == 1:
+                    value.append(line)
+                else:
+                    value[1] += line
+        else:
+            dict_[species_name].append(value)
     return dict_, gene_name
 
 def make_mel_and_species_dicts(dict_):
@@ -104,12 +109,49 @@ def add_gaps_to_species(spec_seq, mel_w_gaps, insert_dict):
         for index in gaps:
             if index not in insert_dict[key]:
                 value.insert(index, '-') 
+    spec_seq['mel'] = list(mel_w_gaps)
     return spec_seq
+
+def substitute_nucleotides(spec_prot_align, spec_nucl_seq):
+    if spec_nucl_seq:
+        nuc_dict = {}
+        with open(spec_nucl_seq, 'r') as source_file:
+            gene_name = source_file.name.split('_')[1]
+            for i, line in enumerate(source_file.read().split('\n')):
+                if i == 0:
+                    key, value = line[line.index('species=D') + 9:line.index('species=D') + 12], ''
+                elif line.startswith('>'):
+                    if len(spec_prot_align[key]) - spec_prot_align[key].count('-') + 1 == len(value) / 3:
+                        n = 3
+                        value = [value[i:i+n] for i in range(0, len(value), n)]
+                        nuc_dict[key] = value
+                    key, value = line[line.index('species=D') + 9:line.index('species=D') + 12], ''
+                elif line:
+                    value += line
+            else:
+                if len(spec_prot_align[key]) - spec_prot_align[key].count('-') + 1 == len(value) / 3:
+                    n = 3
+                    value = [value[i:i+n] for i in range(0, len(value), n)]
+                    nuc_dict[key] = value
+
+        for key, value in spec_prot_align.iteritems():
+            nucl_seq = nuc_dict[key]
+            new_value, count = '', 0
+            for i, amino_acid in enumerate(value):
+                if amino_acid == '-':
+                    new_value += '---'
+                elif amino_acid != '-':
+                    new_value += nucl_seq[count]
+                    count += 1
+            spec_prot_align[key] = list(new_value)
+        return spec_prot_align
+    else:
+        return spec_prot_align
 
 def check_per_align(gapped_seq, mel):
     '''Checks to see if there is perfect alignment of the amino acid'''
     perf_align = []
-    values = gapped_seq.values() + [mel]
+    values = gapped_seq.values()
     for i in range(len(values[0])):
         temp = []
         for spec in values:
@@ -122,10 +164,9 @@ def check_per_align(gapped_seq, mel):
 
 def write_output(mel_w_gaps, spec_seq, per_line, perf_align, gene_name):
     '''Write an output file'''
-    keys = sorted(spec_seq)
+    keys = sorted([key for key in spec_seq.keys() if key != 'mel'])
     keys.insert(0, 'mel')
     keys.append('perf')
-    spec_seq['mel'] = mel_w_gaps
     spec_seq['perf'] = perf_align
     output_name = '{}_alignment.txt'.format(gene_name)
     print '\nOutput saved as:', output_name
@@ -154,6 +195,7 @@ def main ():
     mel_w_gaps = combine_mel_alignments(mel_seq)
     mel_w_gaps, insert_dict = mk_insertion_dict(mel_seq, mel_w_gaps)
     gapped_seq = add_gaps_to_species(spec_seq, mel_w_gaps, insert_dict)
+    gapped_seq = substitute_nucleotides(gapped_seq, arg.nuc)
     perf_align = check_per_align(gapped_seq, mel_w_gaps)
     write_output(mel_w_gaps, gapped_seq, arg.line_length, perf_align, gene_name)
 
