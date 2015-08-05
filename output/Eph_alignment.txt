@@ -1,0 +1,77 @@
+mel	MKMVGCHPNDK-KVKYDGIKSKTSSVTILTSVLNDAISALKSAFYKNQAPISEQNRSQIV
+sec	MKMVGCHPNDKDEVKYDGIKSKTSSVTILTSVQSDAIRTLKSAFYKEQAPISEQNRSQIC
+perf	***********  *******************  ***  ******* ************ 
+
+mel	SRMSLLRTILLIIISIHFKLAHADQVVLLDTTREATLEWTRYPYGPQAQTPGWVEESFTD
+sec	SRMSLLSTILLIIISIHFKLARADQVVLLDTTREATLEWTRYPYGPQAQTPGWVEESFTD
+perf	****** ************** **************************************
+
+mel	FVKGINWRSYVVCDVAYHNVNNWLWSPFIDRGSANRLYIEIQFTIRDCSLFPGNALSCKE
+sec	FVKGINWRSYVVCDVAYHNVNNWLWSPFIDRGSANRLYIEIQFTIRDCSLFPGNALSCKE
+perf	************************************************************
+
+mel	TFSLLFYEFDAATREPPPWQTDSYRLIARIAAGEGRFNQNSDVDINTEVKSIAVNKKGVY
+sec	TFSLLFYEFDAATREPPPWQTDSYRLIARIAAGEGRFNQNSDVDINTEVKSIAVNKKGVY
+perf	************************************************************
+
+mel	FAFRDQGACISVLAVKVYYITCPAVTENFAHFNETPTGREITIIEKQNGTCVDNAEPYET
+sec	FAFRDQGACISVLAVKVYYITCPAVTENFAHFNETPTGREITIIEKQNGTCVENAEPYET
+perf	**************************************************** *******
+
+mel	PTYLCKGDGKWTILTGGCRCKAGYEPNYTNKTCTECPLGTFKSPEVTKCTPCPPNSNASK
+sec	PTYLCKGDGKWTILTGGCRCKAGYEPNYINKTCTECPLGTFKSPEVTKCTPCPPNSNASK
+perf	**************************** *******************************
+
+mel	TGSPFCKCASGFYRHPNDGRHMPCYSPPAAPTNLTLLFVDQTSAIISWSAPAKNESFSSE
+sec	TGSPFCKCVSGYYRHPNDGRHMPCYSPPPAPTNLTLLFVDQTSAIISWSAPAKNESLSSE
+perf	******** ** **************** *************************** ***
+
+mel	TNSKIYHSDIVYKIKCNICSPNVVYNPSTDTFNETKITLTNLEPVTTYTVQIHAINSVSH
+sec	TQSKIYHSDIVYKIKCNMCSPNVVYNPSTDTFNETKITLTNLEPVTTYTVQIHAINSVSH
+perf	* *************** ******************************************
+
+mel	INEFKRHSNESSLVAVSDIVFSNTSLLNIPLDLNEVKTGQAEIVFTTESVLLSTVFNLRI
+sec	INEFNRHTNESSLVAVNDIIFSNTSLLNIPLDLNEVKTGQAEIVFTTESVLLSTVFNLRI
+perf	**** ** ******** ** ****************************************
+
+mel	LAITNKDADLEWDKPVQSDFPLEFYEVRWFPKVELDAINKSALNTKETKAHIVGLLENTE
+sec	LAYN--------------------------------------------------------
+perf	**                                                          
+
+mel	YGFQVRCKTNNGFGSYSNMIYAQTLQSVGSVYDDSVQIRFIAGAIVTGVLFLVIFIIATV
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	YFMRSKHQDDLDKKSTNHLPLPLDYASNEVNSMDTTPIVKKLHLNVTTPLFGNSRSYVDP
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	HTYEDPNQAIREFAREIDANYITIEAIIGGGEFGDVCRGRLKIPPNFVQDIDVAIKTLKP
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	GSSEKARCDFLTEASIMGQFDHPNVIYLQGVVTRSNPVMIITEYMENGSLDTFLRVNDGK
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	FQTLQLIVMLRGIASGMSYLSDMNYVHRDLAARNVLVNAQLICKIADFGLSREIENASDA
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	YTTRGGKIPVRWTAPEAIAFRKFTSASDVWSYGVVLWEVMSYGERPYWNWSNQDVIKSIE
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	KGYRLPAPMDCPEALYQLMLDCWQKQRTHRPTFASIVSTLDNLARQPQSLLTTRPSPESD
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	GNHILDGQRGQNIFISTDLWLEHIKMSRYCHHFKEANLINAQQISRLTAQQLSDMGITLV
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	GHQKKILHQARQLDTII
+sec	-----------------
+perf	                 
+
+

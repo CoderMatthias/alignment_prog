@@ -1,0 +1,91 @@
+mel	-----------------------------------------MAALANK------------
+ere	-----------------------------------------MAALANK------------
+sec	MAENQSAASEDSGHQQQHQQQQQHQQHQQPLATTSVTAASTTSVLANQSPTNSQASSPEN
+perf	                                            ***             
+
+mel	---------------------MAANMATTSSSSN--------------------------
+ere	---------------------MAANMATTSSSS---------------------------
+sec	SQEALPLLRRQQSAAAATVAAAAATVAATTSGTSQQQQQHRNSISNMFDRTVNAKFKPAS
+perf	                      **  * * *                             
+
+mel	---------------------------------------------------------NNN
+ere	---------------------------------------------------------NNN
+sec	SNAGPGNNPVRRNSMLTPSRGVTIGGTGGNIRKLTKVSSLTSNHHFAVCYPPSNIYQNSN
+perf	                                                         * *
+
+mel	IAGSESTL----------------------------------------------------
+ere	IGGSESTL----------------------------------------------------
+sec	NAGSNSALQRTTSESLRLNSMSRLAAAATPTTVSRASSNSSLATSTSTSLAPKSSSSSGG
+perf	  ** * *                                                    
+
+mel	-------QQQQML-----------------------------------------------
+ere	-------QQQQML-----------------------------------------------
+sec	SNSTPQQQQQQLVSSNNSSSSSNNSFTKASSPNNNGARWVGGAATAAATGTAAAAGSHHH
+perf	       ****                                                 
+
+mel	-----------HHQQQQQQQT--QSNL---------------------------------
+ere	-----------HHQQQQQQQQQPQSNL---------------------------------
+sec	QPHHHHHHHHHHHQHHNHQQQ--QTSLSQGHASLTVAGGSASAGGGGGGSGSSSGTAAGG
+perf	           ***    **   *  *                                 
+
+mel	------------------------------------------------------------
+ere	------------------------------------------------------------
+sec	TNRKPKTTSSFEITSVTVGHPKLNAAGDTGDESADDLDESHTDDNSRITDLENETPSMSE
+perf	                                                            
+
+mel	--------------------IMPAA------VIQP-----------------EYLLNNDR
+ere	--------------------IMPAA------VIQP-----------------EYLLNNDR
+sec	DTFSKEEVYYANNALSTNAPVIPTSSQYGLVVVDPIAPSLGQTIQNVQVNVSDNIINVVS
+perf	                      *        *  *                     *   
+
+mel	GL---------------------FKV--------------YCFIKDFI------------
+ere	GL---------------------FKV--------------YCFIKDFI------------
+sec	GAVTPGGTKKKDDIKETQHRSERFKVVKIESTEPFKRGRWMCM--DYLDHSSVGNGGNNN
+perf	*                      ***               *   *              
+
+mel	-----------------GASGTSA--VAIDNKIEQAM-----------------------
+ere	-----------------GASGTSA--VAIDNKIEQAM-----------------------
+sec	EKTGSSTSEAHAATTDGGAAGIAAGSEAPAHKTTQSMILPPTQKLNENHLEANSTDANWN
+perf	                 ** *  *   *   *  * *                       
+
+mel	-------------------DLVKSHLMIAVRE-------------EVEVL--------KE
+ere	-------------------DLVKSHLMIAVRE-------------EVEVL--------KE
+sec	YAEQQQQQQQQQQQQTIVGNALTKTLPVALRNVSRSSSVTRSPNASVEFLSPNLLAQQQQ
+perf	                         *  * *               ** *          
+
+mel	RISELMDKIN----------------------KLELENSILKSNIPQETL----------
+ere	RISELMDKIN----------------------KLELENNILKSNIPQETL----------
+sec	QQQQIFDSVNANAASSPNPAGDPNNMDYARTAAMQLHQTLQQLKQREDAMDVPPGAGGYP
+perf	      *  *                         *                        
+
+mel	-----------------------------------QQLQLQLQLAAPPATPAIQAAPAVQ
+ere	-----------------------------------QQLQMQLQIAAPPATPAIQAAPAVQ
+sec	NYQNGGDSAGGAASNNNSAAAATGESQLSTSYVEQQQQQQQQPLSPAPLTP--QATPTFA
+perf	                                   ** * *      * **  ** *   
+
+mel	SVVA---------------------------------------------PAAAGQAV---
+ere	SAVA---------------------------------------------PAAAGQAV---
+sec	AVAAGQSPNFQLEQQQQQQQATSQIDGIVPQPFNPQQQQQQTPQQSTAQQAAAGNATSAV
+perf	   *                                              **** *    
+
+mel	----------------------------------QQQ---------AAGAVAVTGVATSP
+ere	----------------------------------QQQQA-------AGGAVAVTGVATSP
+sec	AAPPPQQTSNTSNAAVTTGQGQTMPLLSHMTSYEQQQPNLGAAAAAAAGGTAATSVAAPQ
+perf	                                  ***         * *  * * **   
+
+mel	A----------------------------------------SAVVPTSIPNGSAENGS--
+ere	A----------------------------------------SAAVPTSIPNGSAENGS--
+sec	AIPTLQLQSAPSTIADPQQLMVPQQPQQQHQEEQQQQQPQQQPLPPTNIASASANNSNLN
+perf	*                                            ** *   ** *    
+
+mel	----------SAVESAAVSVEQQVQQVTSAAAAAASVVTANGPMS---------------
+ere	----------SAVES-AVSVEQQVQQVTSAAAAA--VVTANGPMS---------------
+sec	LTNTNVVATGEATTNALTLTDEQATAALAAAFATGAAAAATGATSAATQQQIQQLQQQPN
+perf	           *          *      ** *      * *  *               
+
+mel	------------------
+ere	------------------
+sec	AESETERVFERLLSIREK
+perf	                  
+
+

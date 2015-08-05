@@ -1,0 +1,45 @@
+mel	MELLPLKSPLPILLLCLTIST----SVSGYLNIFISHHEVMKLMGLEADLFYVHEGAINT
+vir	MLSMAASRSSLLQLLCISSITWQLPLVSGYLNIFISHHEVMKLMGLEADLFYVHEGAINT
+perf	*            ***    *     **********************************
+
+mel	YAMHFTVPVPADVHELEFSWQSLIAYPLPYAISIEYNNDQEALGTPTLSIPHKGLVPQEI
+vir	YAMHFTVPVPADVHELEFSWQSLIAYPLRYTISIEYANDQDALGTPTLSIPHKGLVPQEI
+perf	**************************** * ***** *** *******************
+
+mel	ESFLVYLPCTGNASLQMPVNVNMVVRAPPRFNDTRLHFKRNKICAKGISPEPNQSPAPAH
+vir	ESFLVYLPCTGNASLQLPVNVNMVVQGPPRFNDTRLHFKRNKICAKGISPEPNQSPAPAN
+perf	**************** ********  ******************************** 
+
+mel	APSQGPALLSAAACALGLVLAVGLVASMMYVRARKQLRQDSLHTSFTTAAYGSHQNVFIR
+vir	APSQGPALMNAAACALGLVLAVGLVASMMYVRARKQLRQDSLHTSFTTAGYGSHQNVFIR
+perf	********  *************************************** **********
+
+mel	LDPLGRPPSATGSYATIASLNKYPADSKKSCSIFDRFRSSPTPTPYATALLPMNLEQTAE
+vir	LDPLGRPPSATGSYATIASLNKYPAETKKSCSIFDRFRSSPTPTPYATALLPMG-DQGGE
+perf	*************************  **************************   *  *
+
+mel	TIYSKPESICPSRISYYASSQLTQPCSLSTPKSIRSNGNGNCTSGSGSLSLFGGIPTGST
+vir	TIYSKPESVCPSRISYYASSQLTQK-----------------------------------
+perf	******** ***************                                    
+
+mel	ITMASHGEKGNQRLRRITSVQPGALSYEELVKEGTFGRIYAGKLGESCEALVKTVIDGAS
+vir	------------------------------------------------------------
+perf	                                                            
+
+mel	LTQVACLLQDASLLIGVSHQHILAPLLANTELPGPPEIAYPHPSKGNLKMYLQKSRESST
+vir	------------------------------------------------------------
+perf	                                                            
+
+mel	ALSTRQLVEFGLHITKGLAYLHSLGIVHKDIATRNCYLDEESYVKICDSALSRDLFPDDY
+vir	------------------------------------------------------------
+perf	                                                            
+
+mel	DCLGDNENRPLKWLSLESLQKRVYATQGDVWALGVTYWELVTLAQMPHEEVDIFELTNYL
+vir	------------------------------------------------------------
+perf	                                                            
+
+mel	AAGFRLEQPVNCPDEFFTVMNCCWHCEAKQRPTPSQLLSYLQDFHADLGMYI
+vir	----------------------------------------------------
+perf	                                                    
+
+

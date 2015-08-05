@@ -115,38 +115,47 @@ def add_gaps_to_species(spec_seq, mel_w_gaps, insert_dict):
 def substitute_nucleotides(spec_prot_align, spec_nucl_seq):
     if spec_nucl_seq:
         nuc_dict = {}
-        with open(spec_nucl_seq, 'r') as source_file:
-            gene_name = source_file.name.split('_')[1]
-            for i, line in enumerate(source_file.read().split('\n')):
-                if i == 0:
-                    key, value = line[line.index('species=D') + 9:line.index('species=D') + 12], ''
-                elif line.startswith('>'):
+        try:
+            with open(spec_nucl_seq, 'r') as source_file:
+                gene_name = source_file.name.split('_')[1]
+                for i, line in enumerate(source_file.read().split('\n')):
+                    if i == 0:
+                        key, value = line[line.index('species=D') + 9:line.index('species=D') + 12], ''
+                    elif line.startswith('>'):
+                        if len(spec_prot_align[key]) - spec_prot_align[key].count('-') + 1 == len(value) / 3:
+                            n = 3
+                            value = [value[i:i+n] for i in range(0, len(value), n)]
+                            nuc_dict[key] = value
+                        key, value = line[line.index('species=D') + 9:line.index('species=D') + 12], ''
+                    elif line:
+                        value += line
+                else:
                     if len(spec_prot_align[key]) - spec_prot_align[key].count('-') + 1 == len(value) / 3:
                         n = 3
                         value = [value[i:i+n] for i in range(0, len(value), n)]
                         nuc_dict[key] = value
-                    key, value = line[line.index('species=D') + 9:line.index('species=D') + 12], ''
-                elif line:
-                    value += line
-            else:
-                if len(spec_prot_align[key]) - spec_prot_align[key].count('-') + 1 == len(value) / 3:
-                    n = 3
-                    value = [value[i:i+n] for i in range(0, len(value), n)]
-                    nuc_dict[key] = value
 
-        for key, value in spec_prot_align.iteritems():
-            nucl_seq = nuc_dict[key]
-            new_value, count = '', 0
-            for i, amino_acid in enumerate(value):
-                if amino_acid == '-':
-                    new_value += '---'
-                elif amino_acid != '-':
-                    new_value += nucl_seq[count]
-                    count += 1
-            spec_prot_align[key] = list(new_value)
-        return spec_prot_align
+            for key, value in spec_prot_align.iteritems():
+                nucl_seq = nuc_dict[key]
+                new_value, count = '', 0
+                for i, amino_acid in enumerate(value):
+                    if amino_acid == '-':
+                        new_value += '---'
+                    elif amino_acid != '-':
+                        new_value += nucl_seq[count]
+                        count += 1
+                spec_prot_align[key] = list(new_value)
+            return spec_prot_align
+        except IOError:
+            return spec_prot_align
     else:
         return spec_prot_align
+
+def fill_out_values(gapped_seq):
+    max_len = max([len(value) for value in gapped_seq.values()])
+    for key, value in gapped_seq.iteritems():
+        gapped_seq[key] = value + ['-'] * (max_len - len(value))
+    return gapped_seq
 
 def check_per_align(gapped_seq, mel):
     '''Checks to see if there is perfect alignment of the amino acid'''
@@ -196,6 +205,7 @@ def main ():
     mel_w_gaps, insert_dict = mk_insertion_dict(mel_seq, mel_w_gaps)
     gapped_seq = add_gaps_to_species(spec_seq, mel_w_gaps, insert_dict)
     gapped_seq = substitute_nucleotides(gapped_seq, arg.nuc)
+    gapped_seq = fill_out_values(gapped_seq)
     perf_align = check_per_align(gapped_seq, mel_w_gaps)
     write_output(mel_w_gaps, gapped_seq, arg.line_length, perf_align, gene_name)
 

@@ -1,0 +1,37 @@
+mel	MAPTANTVLITVPRTAITSNNLPKLRPAPLTAALLKVSATPSASPTPSSSGYASSSNMDD
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	DNMAASQPKAKKRRLDHLTWEEKVQRKKLKNRVAAQTSRDRKKARMEEMDYEIKELTDRT
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	EILQNKCDSLQAINESLLAKNHKLDSELELLRQELAELKQQQQHNTRCISQSNASAGAEG
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	CASTNLGSAAGYTTGGHTVVSASAGGAAEEQQEPGLTLESCGPLPTLQDMLGVDEEFDVK
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	RLEELAESLLADITADLETGAGASSPAAAQDAGNAERLPGPMVGPAAERLESDGHRANGL
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	NVEQEQETEHKVSLNVQMLKINGNPQHTTAAPASRTATITATAAASQLQATPDTVYGTYD
+sec	------------------------------------------------------------
+perf	                                                            
+
+mel	AKTNSITIVMDGDAVPVNEAVEEIYCDGVSAGDDSTDVIMKCPPPATSPSQVYLNVMNAV
+sec	---------MDGDAVPVNEAVEEIYCDGVSAGDDSTDVIMKCPPPATSPSQVYLNVMNAT
+perf	         ************************************************** 
+
+mel	DNSDDEESFDPIDRFLRPRVKAISPLAKSPALSLHSATSDHGYESILGSPTSVALTLPAD
+sec	ADSDDEECYDPIDRFLRPRVKAICPLAKSPSLSLHSATSDHGYESILGSPTSVALTLPAD
+perf	  *****  ************** ****** *****************************
+
+mel	EDDFPWESNFDELFPSLI
+sec	EDDFPWESNFDELFPSLI
+perf	******************
+
+
